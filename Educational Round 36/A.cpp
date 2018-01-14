@@ -11,6 +11,6 @@ int main(void) {
 		if (k % a != 0)
 			continue;
 		mn = min(mn, k / a);
-	}
+	} 
 	printf("%d", mn);
 }
