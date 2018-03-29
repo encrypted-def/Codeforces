@@ -6,7 +6,7 @@
 #include <functional>
 using namespace std;
 typedef long long ll;
-typedef pair<ll, ll> PAIR;
+typedef pair<ll, ll> pii;
 #define X first
 #define Y second
 int main(void){
