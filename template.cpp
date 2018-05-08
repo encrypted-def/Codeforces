@@ -9,6 +9,7 @@
 #include <functional>
 #include <iostream>
 #include <tuple>
+#include <string>
 #pragma warning(disable:4996)
 #pragma comment(linker, "/STACK:336777216")
 using namespace std;
