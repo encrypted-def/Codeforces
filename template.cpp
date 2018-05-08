@@ -51,4 +51,5 @@ bool OOB(int x, int y, int N, int M) {	return 0 > x || x >= N || 0 > y || y >= M
 #define pf6l(a,b,c,d,e,f) cout << a << ' ' << b << ' '<< c << ' '<< d << ' '<< e << ' ' << f << '\n'
 int main(void) {
 	ios::sync_with_stdio(false);
+	cin.tie(0);
 }
