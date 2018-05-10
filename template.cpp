@@ -34,8 +34,8 @@ int ddx[8] = { 0,0,1,1,1,-1,-1,-1 }, ddy[8] = { 1,-1,1,0,-1,1,0,-1 };
 ll MOD = 1000000000;
 ll POW(ll a, ll b, ll MMM = MOD) { ll ret = 1; for (; b; b >>= 1, a = (a*a) % MMM)if (b & 1)ret = (ret*a) % MMM; return ret; }
 ll gcd(ll a, ll b) { return b ? gcd(b, a%b) : a; }
-ll lcm(ll a, ll b) { if (a == 0 || b == 0)return a + b; return a*(b / gcd(a, b)); }
-bool OOB(int x, int y, int N, int M) {	return 0 > x || x >= N || 0 > y || y >= M; }
+ll lcm(ll a, ll b) { if (a == 0 || b == 0)return a + b; return a * (b / gcd(a, b)); }
+bool OOB(int x, int y, int N, int M) { return 0 > x || x >= N || 0 > y || y >= M; }
 #define X first
 #define Y second
 #define rep(i,a,b) for(int i = a; i < b; i++)
@@ -47,19 +47,15 @@ bool OOB(int x, int y, int N, int M) {	return 0 > x || x >= N || 0 > y || y >= M
 #define sf4(a,b,c,d) cin >> a >> b >> c >> d
 #define sf5(a,b,c,d,e) cin >> a >> b >> c >> d >> e
 #define sf6(a,b,c,d,e,f) cin >> a >> b >> c >> d >> e >> f
-#define pf1(a) cout << a << ' '
-#define pf2(a,b) cout << a << ' ' << b << ' '
-#define pf3(a,b,c) cout << a << ' ' << b << ' '<< c << ' '
-#define pf4(a,b,c,d) cout << a << ' ' << b << ' '<< c << ' '<< d << ' '
-#define pf5(a,b,c,d,e) cout << a << ' ' << b << ' '<< c << ' '<< d << ' '<< e << ' '
-#define pf6(a,b,c,d,e,f) cout << a << ' ' << b << ' '<< c << ' '<< d << ' '<< e << ' ' << f << ' '
-#define pf1l(a) cout << a << '\n'
-#define pf2l(a,b) cout << a << ' ' << b << '\n'
-#define pf3l(a,b,c) cout << a << ' ' << b << ' '<< c << '\n'
-#define pf4l(a,b,c,d) cout << a << ' ' << b << ' '<< c << ' '<< d << '\n'
-#define pf5l(a,b,c,d,e) cout << a << ' ' << b << ' '<< c << ' '<< d << ' '<< e << '\n'
-#define pf6l(a,b,c,d,e,f) cout << a << ' ' << b << ' '<< c << ' '<< d << ' '<< e << ' ' << f << '\n'
-int main(void) {
-	ios::sync_with_stdio(false);
-	cin.tie(0);
-}
+#define pf1(a) cout << (a) << ' '
+#define pf2(a,b) cout << (a) << ' ' << (b) << ' '
+#define pf3(a,b,c) cout << (a) << ' ' << (b) << ' '<< (c) << ' '
+#define pf4(a,b,c,d) cout << (a) << ' ' << (b) << ' '<< (c) << ' '<< (d) << ' '
+#define pf5(a,b,c,d,e) cout << (a) << ' ' << (b) << ' '<< (c) << ' '<< (d) << ' '<< (e) << ' '
+#define pf6(a,b,c,d,e,f) cout << (a) << ' ' << (b) << ' '<< (c) << ' '<< (d) << ' '<< (e) << ' ' << (f) << ' '
+#define pf1l(a) cout << (a) << '\n'
+#define pf2l(a,b) cout << (a) << ' ' << (b) << '\n'
+#define pf3l(a,b,c) cout << (a) << ' ' << (b) << ' '<< (c) << '\n'
+#define pf4l(a,b,c,d) cout << (a) << ' ' << (b) << ' '<< (c) << ' '<< (d) << '\n'
+#define pf5l(a,b,c,d,e) cout << (a) << ' ' << (b) << ' '<< (c) << ' '<< (d) << ' '<< (e) << '\n'
+#define pf6l(a,b,c,d,e,f) cout << (a) << ' ' << (b) << ' '<< (c) << ' '<< (d) << ' '<< (e) << ' ' << (f) << '\n'
