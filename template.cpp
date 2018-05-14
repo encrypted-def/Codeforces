@@ -53,6 +53,7 @@ bool OOB(int x, int y, int N, int M) { return 0 > x || x >= N || 0 > y || y >= M
 #define pf4(a,b,c,d) cout << (a) << ' ' << (b) << ' '<< (c) << ' '<< (d) << ' '
 #define pf5(a,b,c,d,e) cout << (a) << ' ' << (b) << ' '<< (c) << ' '<< (d) << ' '<< (e) << ' '
 #define pf6(a,b,c,d,e,f) cout << (a) << ' ' << (b) << ' '<< (c) << ' '<< (d) << ' '<< (e) << ' ' << (f) << ' '
+#define pf0l() cout << '\n';
 #define pf1l(a) cout << (a) << '\n'
 #define pf2l(a,b) cout << (a) << ' ' << (b) << '\n'
 #define pf3l(a,b,c) cout << (a) << ' ' << (b) << ' '<< (c) << '\n'
