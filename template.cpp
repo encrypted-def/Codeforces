@@ -36,8 +36,8 @@ ll dy[4] = { 0,0,1,-1 };
 ll ddx[8] = { 0,0,1,1,1,-1,-1,-1 }, ddy[8] = { 1,-1,1,0,-1,1,0,-1 };
 ll MOD = 1000000000;
 ll POW(ll a, ll b, ll MMM = MOD) { ll ret = 1; for (; b; b >>= 1, a = (a*a) % MMM)if (b & 1)ret = (ret*a) % MMM; return ret; }
-ll GCD(ll a, ll b) { return b ? gcd(b, a%b) : a; }
-ll LCM(ll a, ll b) { if (a == 0 || b == 0)return a + b; return a * (b / gcd(a, b)); }
+ll GCD(ll a, ll b) { return b ? GCD(b, a%b) : a; }
+ll LCM(ll a, ll b) { if (a == 0 || b == 0)return a + b; return a * (b / GCD(a, b)); }
 bool OOB(ll x, ll y, ll N, ll M) { return 0 > x || x >= N || 0 > y || y >= M; }
 #define X first
 #define Y second
