@@ -31,9 +31,9 @@ typedef tuple<ll, ll, ll, ll> tl4;
 typedef stack<ll> sl;
 typedef queue<ll> ql;
 typedef priority_queue<ll> pql;
-ll dx[4] = { 1,-1,0,0 };
-ll dy[4] = { 0,0,1,-1 };
-ll ddx[8] = { 0,0,1,1,1,-1,-1,-1 }, ddy[8] = { 1,-1,1,0,-1,1,0,-1 };
+int dx[4] = { 1,-1,0,0 };
+int dy[4] = { 0,0,1,-1 };
+int ddx[8] = { 0,0,1,1,1,-1,-1,-1 }, ddy[8] = { 1,-1,1,0,-1,1,0,-1 };
 ll MOD = 1000000000;
 ll POW(ll a, ll b, ll MMM = MOD) { ll ret = 1; for (; b; b >>= 1, a = (a*a) % MMM)if (b & 1)ret = (ret*a) % MMM; return ret; }
 ll GCD(ll a, ll b) { return b ? GCD(b, a%b) : a; }
