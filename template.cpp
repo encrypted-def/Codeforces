@@ -1,18 +1,9 @@
 # pragma GCC optimize ("O3")
 # pragma GCC optimize ("Ofast")
 # pragma GCC optimize ("unroll-loops")
-#include <stdio.h>
-#include <string.h>
-#include <vector>
-#include <algorithm>
-#include <queue>
-#include <stack>
-#include <set>
-#include <map>
-#include <functional>
-#include <iostream>
-#include <tuple>
-#include <string>
+
+#include <bits/stdc++.h>
+
 #pragma warning(disable:4996)
 #pragma comment(linker, "/STACK:336777216")
 using namespace std;
@@ -38,10 +29,10 @@ ll MOD = 1000000000;
 ll POW(ll a, ll b, ll MMM = MOD) { ll ret = 1; for (; b; b >>= 1, a = (a*a) % MMM)if (b & 1)ret = (ret*a) % MMM; return ret; }
 ll GCD(ll a, ll b) { return b ? GCD(b, a%b) : a; }
 ll LCM(ll a, ll b) { if (a == 0 || b == 0)return a + b; return a * (b / GCD(a, b)); }
-ll INV(ll a, ll m){
+ll INV(ll a, ll m) {
 	ll m0 = m, y = 0, x = 1;
 	if (m == 1)	return 0;
-	while (a > 1){
+	while (a > 1) {
 		ll q = a / m;
 		ll t = m;
 		m = a % m, a = t;
@@ -52,10 +43,10 @@ ll INV(ll a, ll m){
 	if (x < 0) x += m0;
 	return x;
 }
-ll EXGCD(ll a, ll b, ll&x, ll&y) {
-	if (!b)return x = 1, y = 0, a;
-	ll d = EXGCD(b, a%b, x, y), t = x;
-	return x = y, y = t - a / b * y, d;
+pll EXGCD(ll a, ll b) {
+	if (b == 0) return { 1,0 };
+	auto t = EXGCD(b, a%b);
+	return { t.second,t.first - t.second*(a / b) };
 }
 bool OOB(ll x, ll y, ll N, ll M) { return 0 > x || x >= N || 0 > y || y >= M; }
 #define X first
@@ -82,7 +73,11 @@ bool OOB(ll x, ll y, ll N, ll M) { return 0 > x || x >= N || 0 > y || y >= M; }
 #define pf4l(a,b,c,d) cout << (a) << ' ' << (b) << ' '<< (c) << ' '<< (d) << '\n'
 #define pf5l(a,b,c,d,e) cout << (a) << ' ' << (b) << ' '<< (c) << ' '<< (d) << ' '<< (e) << '\n'
 #define pf6l(a,b,c,d,e,f) cout << (a) << ' ' << (b) << ' '<< (c) << ' '<< (d) << ' '<< (e) << ' ' << (f) << '\n'
+#define pfvec(V) for(auto const &t : V) pf1(t)
+#define pfvecl(V) for(auto const &t : V) pf1(t); pf0l()
+
 int main(void) {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
+	
 }
