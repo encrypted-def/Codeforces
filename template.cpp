@@ -51,8 +51,9 @@ bool OOB(ll x, ll y, ll N, ll M) { return 0 > x || x >= N || 0 > y || y >= M; }
 #define X first
 #define Y second
 #define rep(i,a,b) for(int i = a; i < b; i++)
-#define pb(x) push_back(x)
+#define pb push_back
 #define all(x) (x).begin(), (x).end()
+#define sz(a) ((int)(a.size()))
 #define sf1(a) cin >> a
 #define sf2(a,b) cin >> a >> b
 #define sf3(a,b,c) cin >> a >> b >> c
