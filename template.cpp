@@ -27,7 +27,7 @@ int dy[4] = { 0,0,1,-1 };
 int ddx[8] = { 0,0,1,1,1,-1,-1,-1 }, ddy[8] = { 1,-1,1,0,-1,1,0,-1 };
 ll POW(ll a, ll b, ll MMM) { ll ret = 1; for (; b; b >>= 1, a = (a*a) % MMM)if (b & 1)ret = (ret*a) % MMM; return ret; }
 ll GCD(ll a, ll b) { return b ? GCD(b, a%b) : a; }
-ll LCM(ll a, ll b) { if (a == 0 || b == 0)return a + b; return a * (b / GCD(a, b)); }
+ll LCM(ll a, ll b) { if (a == 0 || b == 0)return a + b; return a / GCD(a,b) * b; }
 ll INV(ll a, ll m) {
 	ll m0 = m, y = 0, x = 1;
 	if (m == 1)	return 0;
