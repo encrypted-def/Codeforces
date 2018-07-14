@@ -3,10 +3,15 @@
 # pragma GCC optimize ("unroll-loops")
 
 #include <bits/stdc++.h>
+//#include <ext/pb_ds/assoc_container.hpp>
+//#include <ext/pb_ds/tree_policy.hpp>
 
 #pragma warning(disable:4996)
 #pragma comment(linker, "/STACK:336777216")
+
 using namespace std;
+//using namespace __gnu_pbds;
+
 typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
@@ -22,6 +27,8 @@ typedef tuple<ll, ll, ll, ll> tl4;
 typedef stack<ll> sl;
 typedef queue<ll> ql;
 typedef priority_queue<ll> pql;
+//typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>ordered_set;
+
 const int dx[4] = { 1,-1,0,0 };
 const int dy[4] = { 0,0,1,-1 };
 const int ddx[8] = { 0,0,1,1,1,-1,-1,-1 }, ddy[8] = { 1,-1,1,0,-1,1,0,-1 };
@@ -29,7 +36,7 @@ const int INF = 0x7f7f7f7f;
 const ll INF_LL = 0x7f7f7f7f7f7f7f7f;
 ll POW(ll a, ll b, ll MMM) { ll ret = 1; for (; b; b >>= 1, a = (a*a) % MMM)if (b & 1)ret = (ret*a) % MMM; return ret; }
 ll GCD(ll a, ll b) { return b ? GCD(b, a%b) : a; }
-ll LCM(ll a, ll b) { if (a == 0 || b == 0)return a + b; return a / GCD(a,b) * b; }
+ll LCM(ll a, ll b) { if (a == 0 || b == 0)return a + b; return a / GCD(a, b) * b; }
 ll INV(ll a, ll m) {
 	ll m0 = m, y = 0, x = 1;
 	if (m == 1)	return 0;
@@ -81,5 +88,5 @@ bool OOB(ll x, ll y, ll N, ll M) { return 0 > x || x >= N || 0 > y || y >= M; }
 int main(void) {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-	
+
 }
