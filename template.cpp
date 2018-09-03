@@ -3,14 +3,13 @@
 # pragma GCC optimize ("unroll-loops")
 
 #include <bits/stdc++.h>
-//#include <ext/pb_ds/assoc_container.hpp>
-//#include <ext/pb_ds/tree_policy.hpp>
-
-#pragma warning(disable:4996)
-#pragma comment(linker, "/STACK:336777216")
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/rope.h>
 
 using namespace std;
-//using namespace __gnu_pbds;
+using namespace __gnu_pbds;
+using namespace __gnu_cxx;
 
 typedef long long ll;
 typedef pair<int, int> pii;
@@ -27,7 +26,7 @@ typedef tuple<ll, ll, ll, ll> tl4;
 typedef stack<ll> sl;
 typedef queue<ll> ql;
 typedef priority_queue<ll> pql;
-//typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>ordered_set;
+typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>ordered_set;
 
 const int dx[4] = { 1,-1,0,0 };
 const int dy[4] = { 0,0,1,-1 };
