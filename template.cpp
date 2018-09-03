@@ -28,8 +28,8 @@ typedef queue<ll> ql;
 typedef priority_queue<ll> pql;
 typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>ordered_set;
 
-const int dx[4] = { 1,-1,0,0 };
-const int dy[4] = { 0,0,1,-1 };
+const int dx[4] = { 1,0,-1,0 };
+const int dy[4] = { 0,1,0,-1 };
 const int ddx[8] = { 0,0,1,1,1,-1,-1,-1 }, ddy[8] = { 1,-1,1,0,-1,1,0,-1 };
 const int INF = 0x7f7f7f7f;
 const ll INF_LL = 0x7f7f7f7f7f7f7f7f;
