@@ -11,7 +11,9 @@ using namespace std;
 using namespace __gnu_pbds;
 using namespace __gnu_cxx;
 
+typedef unsigned int ui;
 typedef long long ll;
+typedef unsigned long long ull;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
 typedef tuple<int, int, int> ti3;
