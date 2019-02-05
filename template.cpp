@@ -87,5 +87,8 @@ bool OOB(ll x, ll y, ll N, ll M) { return 0 > x || x >= N || 0 > y || y >= M; }
 int main(void) {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
+	cout << fixed;
+  cout.precision(20);
+
 
 }
