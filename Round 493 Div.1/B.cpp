@@ -75,28 +75,49 @@ bool OOB(ll x, ll y, ll N, ll M) { return 0 > x || x >= N || 0 > y || y >= M; }
 #define pf6l(a,b,c,d,e,f) cout << (a) << ' ' << (b) << ' '<< (c) << ' '<< (d) << ' '<< (e) << ' ' << (f) << '\n'
 #define pfvec(V) for(auto const &t : V) pf1(t)
 #define pfvecl(V) for(auto const &t : V) pf1(t); pf0l()
-ll n, x, y;
-string S;
+ll N;
+ll solve1() {
+	vector<bool> exist(50*N+2);
+	exist[0] = true;
+	rep(i, 0, N) {
+		vector<bool> exist_cp = exist;
+		fill(all(exist), false);
+		for (int tot = 50*N; tot >= 0; tot--) {
+			if (exist_cp[tot])
+				exist[tot + 1] = exist[tot + 5] = exist[tot + 10] = exist[tot + 50] = true;
+		}
+	}
+	ll cnt = 0;
+	rep(i, 1, 50*N+1) {
+		if (exist[i]) {
+			cnt++;
+		}
+	}
+	return cnt;
+}
+ll solve2() {
+	ll ans = (N - 20) * 49 + 1; // (N-20)*49 아래
+	vector<bool> exist(50 * 20 + 2);
+	exist[0] = true;
+	rep(i, 0, 20) {
+		for (int tot = 50 * 20; tot >= 0; tot--) {
+			if (exist[tot])
+				exist[tot + 4] = exist[tot + 9] = exist[tot + 49] = true;
+		}
+	}
+	rep(i, 1, 50 * 20) {
+		if (exist[i])
+			ans++;
+	}
+	return ans;
+}
 int main(void) {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
-	sf4(n, x, y, S);
-	int cnt = 0;
-	int state = 1;
-	rep(i, 0, n) {
-		if (S[i] == '0') {
-			if (state == 1) {
-				state = 0;
-				cnt++;
-			}
-		}
-		else {
-			state = 1;
-		}
-	}
-	if (cnt == 0) {
-		pf1l(0);
-		return 0;
-	}
-	pf1l(y + (cnt - 1)*min(x, y));
+	sf1(N);
+	if (N <= 30)
+		pf1l(solve1());
+	else
+		pf1l(solve2());
+	return 0;
 }
