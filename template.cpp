@@ -37,23 +37,23 @@ ll POW(ll a, ll b, ll MMM) { ll ret = 1; for (; b; b >>= 1, a = (a*a) % MMM)if (
 ll GCD(ll a, ll b) { return b ? GCD(b, a%b) : a; }
 ll LCM(ll a, ll b) { if (a == 0 || b == 0)return a + b; return a / GCD(a, b) * b; }
 ll INV(ll a, ll m) {
-	ll m0 = m, y = 0, x = 1;
-	if (m == 1)	return 0;
-	while (a > 1) {
-		ll q = a / m;
-		ll t = m;
-		m = a % m, a = t;
-		t = y;
-		y = x - q * y;
-		x = t;
-	}
-	if (x < 0) x += m0;
-	return x;
+  ll m0 = m, y = 0, x = 1;
+  if (m == 1)	return 0;
+  while (a > 1) {
+    ll q = a / m;
+    ll t = m;
+    m = a % m, a = t;
+    t = y;
+    y = x - q * y;
+    x = t;
+  }
+  if (x < 0) x += m0;
+  return x;
 }
 pll EXGCD(ll a, ll b) {
-	if (b == 0) return { 1,0 };
-	auto t = EXGCD(b, a%b);
-	return { t.second,t.first - t.second*(a / b) };
+  if (b == 0) return { 1,0 };
+  auto t = EXGCD(b, a%b);
+  return { t.second,t.first - t.second*(a / b) };
 }
 bool OOB(ll x, ll y, ll N, ll M) { return 0 > x || x >= N || 0 > y || y >= M; }
 #define X first
@@ -92,3 +92,4 @@ int main(void) {
 ///////////////////////////////////////////////
   
 }
+ 
