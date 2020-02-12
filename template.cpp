@@ -85,8 +85,7 @@ bool OOB(ll x, ll y, ll N, ll M) { return 0 > x || x >= N || 0 > y || y >= M; }
 #define pfvecl(V) for(auto const &t : V) pf1(t); pf0l()
 
 int main(void) {
-  ios::sync_with_stdio(false);
-  cin.tie(0);
+  ios::sync_with_stdio(false); cin.tie(0);
   cout << fixed;
   cout.precision(20);
 ///////////////////////////////////////////////
