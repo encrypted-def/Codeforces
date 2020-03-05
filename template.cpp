@@ -56,6 +56,7 @@ pll EXGCD(ll a, ll b) {
   return { t.second,t.first - t.second*(a / b) };
 }
 bool OOB(ll x, ll y, ll N, ll M) { return 0 > x || x >= N || 0 > y || y >= M; }
+
 #define X first
 #define Y second
 #define rep(i,a,b) for(int i = a; i < b; i++)
@@ -84,11 +85,114 @@ bool OOB(ll x, ll y, ll N, ll M) { return 0 > x || x >= N || 0 > y || y >= M; }
 #define pfvec(V) for(auto const &t : V) pf1(t)
 #define pfvecl(V) for(auto const &t : V) pf1(t); pf0l()
 
-int main(void) {
-  ios::sync_with_stdio(false); cin.tie(0);
+
+// to print pair, tuple, vector, ...
+template <typename T, typename V>
+ostream &operator<<(ostream &os, const pair<T, V> &pai) {
+  return os << '(' << pai.first << ' ' << pai.second << ')';
+}
+
+template <size_t n, typename... T>
+typename std::enable_if<(n >= sizeof...(T))>::type
+    print_tuple(std::ostream&, const std::tuple<T...>&)
+{}
+
+template <size_t n, typename... T>
+typename std::enable_if<(n < sizeof...(T))>::type
+    print_tuple(std::ostream& os, const std::tuple<T...>& tup)
+{
+    if (n != 0)
+        os << ", ";
+    os << std::get<n>(tup);
+    print_tuple<n+1>(os, tup);
+}
+
+template <typename... T>
+std::ostream& operator<<(std::ostream& os, const std::tuple<T...>& tup)
+{
+    os << "[";
+    print_tuple<0>(os, tup);
+    return os << "]";
+}
+
+template <typename T>
+ostream &operator<<(ostream &os, const list<T> &v) {
+  os << '[';
+  for (auto p : v) os << p << ",";
+  os << "]";
+  return os;
+}
+
+template <typename T>
+ostream &operator<<(ostream &os, const vector<T> &v) {
+  os << '[';
+  for (auto p : v) os << p << ",";
+  os << "]";
+  return os;
+}
+
+template <typename T>
+ostream &operator<<(ostream &os, const deque<T> &v) {
+  os << '[';
+  for (auto p : v) os << p << ",";
+  os << "]";
+  return os;
+}
+
+template <typename... T>
+ostream &operator<<(ostream &os, const set<T...> &v) {
+  os << "{";
+  for (auto p : v) os << p << ",";
+  os << "}";
+  return os;
+}
+
+template <typename... T>
+ostream &operator<<(ostream &os, const multiset<T...> &v) {
+  os << "{";
+  for (auto p : v) os << p << ",";
+  os << "}";
+  return os;
+}
+
+template <typename... T>
+ostream &operator<<(ostream &os, const map<T...> &v) {
+  os << "{";
+  for (auto p : v) os << p << ",";
+  os << "}";
+  return os;
+}
+
+#ifdef ONLINE_JUDGE
+#define debug(...) 0
+
+#else
+#define debug(...) cout << " [-] ", _dbg(#__VA_ARGS__, __VA_ARGS__)
+template<class TH> void _dbg(const char *sdbg, TH h){ cout << sdbg << '=' << h << endl; }
+template<class TH, class... TA> void _dbg(const char *sdbg, TH h, TA... a) {
+  while(*sdbg != ',') cout << *sdbg++;
+  cout << '=' << (h) << ',';
+  _dbg(sdbg+1, a...);
+}
+#endif
+
+void default_setting(){
+  ios::sync_with_stdio(0); cin.tie(0);
   cout << fixed;
   cout.precision(20);
-///////////////////////////////////////////////
-  
+  srand(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 }
- 
+
+//////////////////////////////////////////////////////
+
+
+
+
+
+int main(void) {
+  default_setting();
+///////////////////////////////////////////////
+  ti4 a;
+  int b;
+  debug(a, b);
+}
