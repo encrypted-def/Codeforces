@@ -163,6 +163,8 @@ ostream &operator<<(ostream &os, const map<T...> &v) {
   return os;
 }
 
+
+
 #ifdef ONLINE_JUDGE
 #define debug(...) 0
 
@@ -183,6 +185,13 @@ void default_setting(){
   srand(std::chrono::high_resolution_clock::now().time_since_epoch().count());
 }
 
+#ifdef ONLINE_JUDGE
+#define forced_iosetting() default_setting()
+
+#else
+#define forced_iosetting() 0
+#endif
+
 //////////////////////////////////////////////////////
 
 
@@ -190,9 +199,8 @@ void default_setting(){
 
 
 int main(void) {
+  forced_iosetting();
   default_setting();
 ///////////////////////////////////////////////
-  ti4 a;
-  int b;
-  debug(a, b);
+  
 }
