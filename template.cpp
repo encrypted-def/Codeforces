@@ -194,8 +194,9 @@ void default_setting(){
 
 //////////////////////////////////////////////////////
 
-
-
+template <class A, class B>
+using pbds_map = tree<A, B, less<A>, rb_tree_tag, tree_order_statistics_node_update>;
+template <class A> using pbds_set = pbds_map<A, null_type>;
 
 
 int main(void) {
