@@ -28,7 +28,11 @@ typedef tuple<ll, ll, ll, ll> tl4;
 typedef stack<ll> sl;
 typedef queue<ll> ql;
 typedef priority_queue<ll> pql;
-typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>ordered_set;
+
+template <class A, class B>
+using pbds_map = tree<A, B, less<A>, rb_tree_tag, tree_order_statistics_node_update>;
+template <class A>
+using pbds_set = pbds_map<A, null_type>;
 
 const int dx[4] = { 1,0,-1,0 };
 const int dy[4] = { 0,1,0,-1 };
@@ -193,11 +197,6 @@ void default_setting(){
 #endif
 
 //////////////////////////////////////////////////////
-
-template <class A, class B>
-using pbds_map = tree<A, B, less<A>, rb_tree_tag, tree_order_statistics_node_update>;
-template <class A> using pbds_set = pbds_map<A, null_type>;
-
 
 int main(void) {
   forced_iosetting();
